@@ -1,0 +1,26 @@
+{
+  "name": "natty-proof-assistant",
+  "displayName": "Natty Proof Assistant",
+  "description": "",
+  "version": "0.0.1",
+  "publisher": "natty",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "natty",
+      "aliases": ["Natty", "natty"],
+      "extensions": [".n"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "natty",
+      "scopeName": "source.natty",
+      "path": "./syntaxes/natty.tmLanguage.json"
+    }]
+  }
+}
