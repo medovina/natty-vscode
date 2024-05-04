@@ -11,10 +11,16 @@
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.natty",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "entity.name.function.natty",
+					"match": "^\\s*(\\d|[a-z])\\."
+				},
+				{
+					"name": "storage.type.natty",
+					"match": "^\\s*(Axiom|Definition|Lemma|Proof|Theorem)\\."
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.natty",
