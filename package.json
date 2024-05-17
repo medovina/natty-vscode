@@ -26,7 +26,7 @@
     "configurationDefaults": {
       "[natty]": {
         "editor.fontFamily": "'Clear Sans', Sans",
-        "editor.fontSize": 15,
+        "editor.fontSize": 14,
         "editor.wordWrap": "on"
       }
     }
