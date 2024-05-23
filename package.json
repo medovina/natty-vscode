@@ -11,7 +11,15 @@
   "categories": [
     "Programming Languages"
   ],
+  "main": "./client/out/extension",
   "contributes": {
+    "configurationDefaults": {
+      "[natty]": {
+        "editor.fontFamily": "'Clear Sans', Sans",
+        "editor.fontSize": 14,
+        "editor.wordWrap": "on"
+      }
+    },
     "languages": [{
       "id": "natty",
       "aliases": ["Natty", "natty"],
@@ -22,13 +30,16 @@
       "language": "natty",
       "scopeName": "source.natty",
       "path": "./syntaxes/natty.tmLanguage.json"
-    }],
-    "configurationDefaults": {
-      "[natty]": {
-        "editor.fontFamily": "'Clear Sans', Sans",
-        "editor.fontSize": 14,
-        "editor.wordWrap": "on"
-      }
-    }
-  }
+    }]
+  },
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"postinstall": "cd client && npm install && cd .."
+	},
+	"devDependencies": {
+		"@types/node": "^18.14.6",
+    "typescript": "^5.3.3"
+	}
 }
