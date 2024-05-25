@@ -6,10 +6,11 @@ import { LanguageClient, LanguageClientOptions, ServerOptions, TransportKind }
 let client: LanguageClient;
 
 let proving: boolean = false;
+let progress: number = 0, total: number = 0;
 let provingItem: vscode.StatusBarItem;
 
 function refresh(): void {
-	provingItem.text = 'Proving: ' + (proving ? 'on' : 'off');
+	provingItem.text = 'Proving: ' + (proving ? progress + ' of ' + total : 'off');
 }
 
 function updateStatus(): void {
@@ -23,7 +24,10 @@ function updateStatus(): void {
 export function activate({subscriptions}: vscode.ExtensionContext) {
 	var provingCommand = vscode.commands.registerCommand('natty.proving', () => {
 		proving = !proving;
+		if (proving)
+			progress = total = 0;
 		refresh();
+		client.sendNotification('natty/setProving', proving);
 	});
 	subscriptions.push(provingCommand);
 
@@ -45,8 +49,15 @@ export function activate({subscriptions}: vscode.ExtensionContext) {
 	};
 
 	client = new LanguageClient( 'nattyServer', 'Natty Server', serverOptions, clientOptions);
+	
+	var listener = client.onNotification("natty/progress",
+		(new_progress: number, new_total: number) => {
+			progress = new_progress;
+			total = new_total;
+			refresh();
+		});
+	subscriptions.push(listener);
 	client.start();
-	client.sendNotification('natty/hello', true);
 }
 
 export function deactivate(): Thenable<void> | undefined {
