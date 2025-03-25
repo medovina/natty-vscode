@@ -40,7 +40,7 @@ export function activate({subscriptions}: vscode.ExtensionContext) {
 	subscriptions.push(vscode.window.onDidChangeActiveTextEditor(e => updateStatus()));
 
 	const serverOptions: ServerOptions = {
-		command: '/home/adam/projects/prover/_build/default/main.exe',
+		command: 'natty',
 		args: ['-l'], transport: TransportKind.pipe, options: { shell: true }
 	};
 
