@@ -15,8 +15,8 @@
   "contributes": {
     "configurationDefaults": {
       "[natty]": {
-        "editor.fontFamily": "'Clear Sans', Sans",
-        "editor.fontSize": 14,
+        "editor.fontFamily": "'DejaVu Sans', Sans",
+        "editor.fontSize": 13,
         "editor.wordWrap": "on"
       }
     },

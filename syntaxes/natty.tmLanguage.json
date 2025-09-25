@@ -15,10 +15,18 @@
 					"name": "entity.name.function.natty",
 					"match": "^\\s*(\\d+|[a-z])\\."
 				},
+                {
+					"name": "entity.name.function.natty",
+					"match": "\\[\\w+\\]|(?<=:)\\w+"
+                },
 				{
 					"name": "storage.type.natty",
-					"match": "^\\s*(Axiom|Definition|Lemma|Proof|Theorem)( \\d*)?\\."
-				}
+					"match": "^\\s*(Axiom|Definition|Lemma|Proof|Theorem)"
+				},
+                {
+					"name": "entity.name.function.natty",
+					"match": "(?<=^\\s*(Axiom|Definition|Lemma|Proof|Theorem)) *\\(\\w+\\)"
+                }
 			]
 		}
 	},
