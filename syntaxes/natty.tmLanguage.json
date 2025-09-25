@@ -25,7 +25,15 @@
 				},
                 {
 					"name": "entity.name.function.natty",
-					"match": "(?<=^\\s*(Axiom|Definition|Lemma|Proof|Theorem)) *\\(\\w+\\)"
+					"match": "(?<=^\\s*(Axiom|Lemma|Theorem)) *\\(\\w+\\)"
+                },
+                {
+					"name": "markup.italic.natty",
+                    "match": "(?<=\\s*Definition.*is )\\w+(?= iff)"
+                },
+                {
+					"name": "markup.italic.natty",
+                    "match": "(?<=\\s*Definition.*is an? )\\w+ (\\w+ )?(?=(of \\w+ (and \\w+ )?|from \\w+ to \\w+ )iff)"
                 }
 			]
 		}
