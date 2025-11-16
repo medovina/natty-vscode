@@ -17,23 +17,27 @@
 				},
                 {
 					"name": "entity.name.function.natty",
-					"match": "\\[\\w+\\]|(?<=:)\\w+"
+					"match": "\\[.+?\\]"
                 },
 				{
 					"name": "storage.type.natty",
-					"match": "^\\s*(Axiom|Definition|Lemma|Proof|Theorem)"
+					"match": "^\\s*(Axiom|Corollary|Definition|Lemma|Proof|Theorem|using)"
 				},
                 {
 					"name": "entity.name.function.natty",
-					"match": "(?<=^\\s*(Axiom|Lemma|Theorem)) *\\(\\w+\\)"
+					"match": "(?<=^\\s*(Axiom|Corollary|Lemma|Theorem)) *\\(.+?\\)"
                 },
                 {
 					"name": "markup.italic.natty",
-                    "match": "(?<=\\s*Definition.*is )\\w+(?= iff)"
+                    "match": "(?<=^\\s*Axiom.*exists a type \\S+ \\(the )\\w+( \\w+)?(?=\\))"
                 },
                 {
 					"name": "markup.italic.natty",
-                    "match": "(?<=\\s*Definition.*is an? )\\w+ (\\w+ )?(?=(of \\w+ (and \\w+ )?|from \\w+ to \\w+ )iff)"
+                    "match": "(?<=^\\s*Definition.*is )\\w+(?= if)"
+                },
+                {
+					"name": "markup.italic.natty",
+                    "match": "(?<=^\\s*Definition.*is an? )\\w+ (\\w+ )?(?=(of \\w+ (and \\w+ )?|from \\w+ to \\w+ )if)"
                 }
 			]
 		}
