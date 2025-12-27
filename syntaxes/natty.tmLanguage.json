@@ -21,7 +21,7 @@
                 },
 				{
 					"name": "storage.type.natty",
-					"match": "^\\s*(Axiom|Corollary|Definition|Lemma|Proof|Theorem|using)"
+					"match": "^\\s*(Axiom|Corollary|Definition|Justification|Lemma|Proof|Theorem|using)"
 				},
                 {
 					"name": "entity.name.function.natty",
