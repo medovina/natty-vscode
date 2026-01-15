@@ -33,11 +33,15 @@
                 },
                 {
 					"name": "markup.italic.natty",
-                    "match": "(?<=^\\s*Definition.*is )\\w+(?= if)"
+                    "match": "(?<=^\\s*Definition. *The type \\S+ \\(the )\\w+( \\w+)?(?=\\))"
                 },
                 {
 					"name": "markup.italic.natty",
-                    "match": "(?<=^\\s*Definition.*is an? )\\w+ (\\w+ )?(?=(of \\w+ (and \\w+ )?|from \\w+ to \\w+ )if)"
+                    "match": "(?<=^\\s*Definition.*(is|are) )\\w+( \\w+)?(?= if)"
+                },
+                {
+					"name": "markup.italic.natty",
+                    "match": "(?<=^\\s*Definition.*is an? )\\w+ (\\w+ )?(?=(of \\w+ (and \\w+ )?|from \\w+ to \\w+ )?if)"
                 }
 			]
 		}
