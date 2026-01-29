@@ -21,11 +21,11 @@
                 },
 				{
 					"name": "storage.type.natty",
-					"match": "^\\s*(Axiom|Corollary|Definition|Justification|Lemma|Proof|Theorem|using)"
+					"match": "^\\s*(Axiom|Corollary|Definition|Exercise|Justification|Lemma|Proof|Theorem|using)"
 				},
                 {
 					"name": "entity.name.function.natty",
-					"match": "(?<=^\\s*(Axiom|Corollary|Lemma|Theorem)) *\\(.+?\\)"
+					"match": "(?<=^\\s*(Axiom|Corollary|Exercise|Lemma|Theorem)) *\\(.+?\\)"
                 },
                 {
 					"name": "markup.italic.natty",
